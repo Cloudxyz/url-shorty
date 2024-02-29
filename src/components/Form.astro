@@ -6,7 +6,6 @@ import { Icon } from 'astro-icon/components';
 <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
 	<div class="text-center">
 		<Logo />
-		<h2 class="text-4xl font-bold tracking-tight text-amber-300 mb-10">Url Shorty</h2>
 		<form class="w-full mb-10" method="POST">
 			<div class="md:flex md:items-center mb-6">
 				<input class="bg-white appearance-none border-2 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none" name="url" id="url" type="url" placeholder="Enter the url to shorten" required>
@@ -18,8 +17,8 @@ import { Icon } from 'astro-icon/components';
 			</div>
 		</form>
 		<a href="" target="_blank" id="url-generated" class="text-4xl font-bold tracking-tight text-white-900 mt-10 hidden flex items-center justify-center">
-			<span class="mr-5"></span>
-			<Icon name="fluent-mdl2:navigate-external-inline" />
+			<span class="mr-5 text-white"></span>
+			<Icon name="fluent-mdl2:navigate-external-inline" class="text-white"/>
 		</a>
 	</div>
 </div>
@@ -44,7 +43,6 @@ import { Icon } from 'astro-icon/components';
 				}).then((shortUrl) => {
 					let urlInput = `https://${shortUrl}.shorty`;
 					let urlGenerated = document.getElementById("url-generated");
-					console.log(urlGenerated);
 					urlGenerated.classList.remove("hidden");
 					if (urlGenerated) {
 						urlGenerated.querySelector("span").textContent = urlInput;
